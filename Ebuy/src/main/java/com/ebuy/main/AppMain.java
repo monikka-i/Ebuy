@@ -1,5 +1,12 @@
 package com.ebuy.main;
 
+import java.util.EnumSet;
+
+import javax.servlet.DispatcherType;
+import javax.servlet.FilterRegistration;
+
+import org.eclipse.jetty.servlets.CrossOriginFilter;
+
 import com.ebuy.service.EbuyService;
 
 import io.dropwizard.Application;
@@ -24,6 +31,6 @@ public class AppMain extends Application<AppConfiguration >{
                 configuration.getDefaultName()
             );
             environment.jersey().register(resource);
-		
+            
 	}
 }
