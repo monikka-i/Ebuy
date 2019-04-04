@@ -1,12 +1,13 @@
-Required:
-1. Eclipse -> JDK, Maven
+Prerequisites:
+1. Eclipse -> JDK, Maven (dependencies: Dropwizard, JSON, mongodb-java-driver)
 2. MongoDB
+3. Postman
 
 Steps to connect with DB:
 1. install mongodb
 2. create a data folder for data to be stored (eg, F:/data)
 3. to start mongodb using cmd : cd C:\Program Files\MongoDB\Server\4.0\bin and mongod --dbpath "F:\data"
-4. using mongo compass gui(or robo mongo), create database, collection, and insert document with values
+4. using mongo compass gui(or robo mongo), create database, collection, and insert document with values (if needed)
 
 Steps to code:
 1. Specify the dependencies in pom.xml
@@ -16,24 +17,22 @@ Steps to code:
    Override run method, to register your resource
 5. run as->run configurations-> maven build(rc->new) -> clean install in goals
 6. to debug, debug as->debug configurations-> remote java applications(new) -> set Port as 8998
-   cmd:
+   cmd: cd C:\Users\mypc\eclipse-workspace\Ebuy\target
+   java -Xdebug -Xrunjdwptransport=dt_socket,address=8998,server=y,suspend=n -jar Ebuy-0.0.1.jar server eBuy.yml
 7. to run the jar: C:\Users\mypc\eclipse-workspace\Ebuy\target> java -jar Ebuy-0.0.1.jar server eBuy.yml
 
 //to do
-Services
-1.register
-2.showCatalogue
-3.submitOrder
-4.cancelOrder
-5.addItems (only admin can add items)
-6.getOrder()
+Services:
+1./ebuy
+2./ebuy/register
+3./ebuy/customer
+4./ebuy/addItems (only admin can add items)
+5./ebuy/product/catalogue
+6./ebuy/product/purchase
+7./ebuy/product/cancel
 
-collections
-
-sequenceNumber
-customer
-order
-catalogue
-
-/ebuy -> welcome page
-/ebuy/catalogue -> shows the list of catalogues
+Collections:
+1.seqNumber
+2.customer
+3.catalogue
+4.order
