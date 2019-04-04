@@ -152,7 +152,7 @@ public class EbuyService {
 	}
 	
 	@GET
-	@Path("/catalogue")
+	@Path("/product/catalogue")
 	@Produces(MediaType.APPLICATION_JSON)
 	public String showCatalogue() {
 		MongoClient mongo = null;
